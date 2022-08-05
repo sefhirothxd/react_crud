@@ -52,6 +52,7 @@ const Login = () => {
     // res?.status === 200 && setToken(res.data.token);
     if (res?.status === 200) {
       setToken(res.data.token);
+      setUser(convertJWT(tokenStorages));
       localStorage.setItem('token', res.data.token);
       setLogin(true);
       navegate('/');
